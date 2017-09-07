@@ -271,7 +271,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
 1. Drag a **Partition And Sample** module beneath **Execute R Script** and connect them.
 
-    ![Screenshot](images/RevisedImages/train_the_model_0.png)
+    ![Screenshot](images/RevisedImages/train_the_model_0.PNG)
 
 1. On the **Properties** panel for the **Partition And Sample** module, set the partitioned method to **partition with custom proportions** and enter 0.3,0.15,0.15 in the **list of proportions seperated by commas** field
 
