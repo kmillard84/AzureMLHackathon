@@ -313,11 +313,11 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
 2. When the experiment is finished running (which will take several minutes), right click on the output port of the **Score Model** module and select **Visualize** to see the results of its predictions. You should have a total of 13 columns.
 
-    ![Screenshot](images/train_the_model_6.PNG)
+    ![Screenshot](images/train_the_model_6.png)
 
 1. If you scroll to the right so that you can see the last two columns, observe there is a **Scored Labels** column and a **Scored Probabilities** column. The former is the prediction (1 for predicting delay, 0 for predicting no delay) and the latter is the probability of the prediction. In the following screenshot, for example, the last row shows a delay predication with a 53.1% probability.
 
-    ![Screenshot](images/train_the_model_7.PNG)
+    ![Screenshot](images/train_the_model_7.png)
 
 1. While this view enables you to see the prediction results for the first 100 rows, if you want to get more detailed statistics across the prediction results to evaluate your models performance you can use the **Evaluate Model** module.
 2. Drag 3 **Evaluate Model** modules on to the design surface beneath each **Score Model** module. Connect the output of each **Score Model** module to the leftmost input of one of the **Evaluate Model** module.
@@ -327,7 +327,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 1. Run the experiment.
 2. When the experiment is finished running, right-click the output of the Evaluate Model module and select **Visualize**. In this dialog box, you are presented with various ways to understand how your model is performing in the aggregate. While we will not cover how to interpret these results in detail, we can examine the ROC chart that tells us that at least our model (the blue curve) is performing better than random (the light gray straight line going from 0,0 to 1,1). A good start for our first model!
 
-    ![Screenshot](images/train_the_model_9.PNG)
+    ![Screenshot](images/train_the_model_9.png)
 
 ## Task 8: Operationalize the Experiment
 
