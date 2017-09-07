@@ -273,19 +273,19 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/RevisedImages/train_the_model_0.PNG)
 
-1. On the **Properties** panel for the **Partition And Sample** module, set the partitioned method to **partition with custom proportions** and enter 0.3,0.15,0.15 in the **list of proportions seperated by commas** field
+1. On the **Properties** panel for the **Partition And Sample** module, set teh partition mode to "assign to folds" and set the partition method to **partition with custom proportions** and enter 0.3,0.15,0.15 in the **list of proportions seperated by commas** field
 
     ![Screenshot](images/RevisedImages/train_the_model_1.PNG)
 
-1. Then drag 3 more **Partition And Sample** modules beneath the existing **Partition and Sample** Modeule.  Connect them as shown in the screen shot.  
+1. Then drag 3 more **Partition And Sample** modules beneath the existing **Partition and Sample** Module.  Connect them as shown in the screen shot.  
 
 	![Screenshot](images/RevisedImages/train_the_model_10.PNG)
 
 1. On the properties of each new **Partition and Sample** select "Pick Fold" for the partition and sample method.  Set the leftmost fold value to 1, the middle to 2 and the right most to 3 as show in the image.
 
-	![Screenshot](images/RevisedImages/train_the_model_10.PNG)
+	![Screenshot](images/RevisedImages/train_the_model_11.PNG)
 
-1. Drag a **Two-Class Logistic Regression** module, a **Two Class Decision Forest** and a **Two Class Boosted Decision Tree** module and connect each  above and connect each to the leftmost input on one of the **Tune Model Hyperparameter** modules.
+1. Drag a **Two-Class Logistic Regression** module, a **Two Class Decision Forest** and a **Two Class Boosted Decision Tree** module onto the workspace
 
     ![Screenshot](images/RevisedImages/train_the_model_4.PNG)
 
@@ -297,11 +297,15 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/RevisedImages/train_the_model_3.PNG)
 
-1. Now it is time to add data to the **Tune Model Hyperparameter** modules.  Connect the output of your left-most **Partition and Sample** Module (should have fold 1) to the middle input of each **Tune Model Hyperparameter** inputs.  Then connect the middle **Partition and Sample** module (should have fold 2) to the right-most input on each of the **Tune Model Hyperparameters** module.  When complete, your configuration should look like the below image:
+1. Now it is time to add data to the **Tune Model Hyperparameter** modules.  Connect the output of your left-most **Partition and Sample** Module (should have fold 1) to the middle input of each **Tune Model Hyperparameter** inputs. 
 
 	![Screenshot](images/RevisedImages/train_the_model_12.PNG)
 
-1. Below the **Tune Model Hyperparameters** modules, drop 3 **Score Model** module. Connect the output of one of the **Tune Model Hyperparameters* module to the leftmost input port of one of the  **Score Model** modules
+1. Now connect the middle **Partition and Sample** module (should have fold 2) to the right-most input on each of the **Tune Model Hyperparameters** module.  When complete, your configuration should look like the below image:
+
+	![Screenshot](images/RevisedImages/train_the_model_14.PNG)
+
+1. Below the **Tune Model Hyperparameters** modules, drop 3 **Score Model** modules. Connect the second output of one of the **Tune Model Hyperparameters** module to the leftmost input port of one of the  **Score Model** modules
 
     ![Screenshot](images/RevisedImages/train_the_model_5.PNG)
 
