@@ -4,16 +4,16 @@ Duration: 90 mins
 
 Synopsis: In this exercise, attendees will implement a classification experiment. They will load the training data from their local machine into a dataset. Then they will explore the data to identify the primary components they should use for prediction, and use two different algorithms for predicting the classification. They will evaluate the performance of both and algorithms choose the algorithm that performs best. The model selected will be exposed as a web service that is integrated with the sample web app.
 
-This exercise has 9 tasks:
+This exercise has 8 tasks:
 
-* [Task 1: Navigate to Machine Learning Studio](#task-2-navigate-to-machine-learning-studio)
-* [Task 2: Upload the Sample Datasets](#task-3-upload-the-sample-datasets)
-* [Task 3: Start a New Experiment](#task-4-start-a-new-experiment)
-* [Task 4: Prepare the Weather Data](#task-5-prepare-the-weather-data)
-* [Task 5: Join the Flight and Weather Datasets](#task-6-join-the-flight-and-weather-datasets)
-* [Task 6: Train the Model](#task-7-train-the-model)
-* [Task 7: Operationalize the Experiment](#task-8-operationalize-the-experiment)
-* [Task 8: Deploy Web Service and Note API Information](#task-9-deploy-web-service-and-note-api-information)
+* [Task 1: Navigate to Machine Learning Studio](#task-1-navigate-to-machine-learning-studio)
+* [Task 2: Upload the Sample Datasets](#task-2-upload-the-sample-datasets)
+* [Task 3: Start a New Experiment](#task-3-start-a-new-experiment)
+* [Task 4: Prepare the Weather Data](#task-4-prepare-the-weather-data)
+* [Task 5: Join the Flight and Weather Datasets](#task-5-join-the-flight-and-weather-datasets)
+* [Task 6: Train the Model](#task-6-train-the-model)
+* [Task 7: Operationalize the Experiment](#task-7-operationalize-the-experiment)
+* [Task 8: Deploy Web Service and Note API Information](#task-8-deploy-web-service-and-note-api-information)
 
 ## Task 1: Navigate to Machine Learning Studio
 
