@@ -250,8 +250,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/RevisedImages/train_the_model_0.PNG)
 
-1. On the **Properties** panel for the **Partition And Sample** module, set teh partition mode to "assign to folds" and set the partition method to **partition with custom proportions** and enter 0.3,0.15,0.15 in the **list of proportions seperated by commas** field.  Thsi will get our data ready to be split
-2. into seperate train/validation/test sets.  Normally, we would use much more of our data for trianing (70%), but for this demo we're limiting it so the models train quickly.
+1. On the **Properties** panel for the **Partition And Sample** module, set teh partition mode to "assign to folds" and set the partition method to **partition with custom proportions** and enter 0.3,0.15,0.15 in the **list of proportions seperated by commas** field.  Thsi will get our data ready to be split into seperate train/validation/test sets.  Normally, we would use much more of our data for trianing (70%), but for this demo we're limiting it so the models train quickly.
 
     ![Screenshot](images/RevisedImages/train_the_model_1.PNG)
 
@@ -309,7 +308,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 1. Run the experiment.
 2. When the experiment is finished running, right-click the output of the Evaluate Model modules and select **Visualize**. In this dialog box, you are presented with various ways to understand how your model is performing in the aggregate. While we will not cover how to interpret these results in detail, we can examine the "Area Under the Curve" (AUC) score for each model.  The higher the score the better the model performs.  You should see that the Two-Class Boosted Decision tree model performed the best. 
 
-    ![Screenshot](images/train_the_model_9.png)
+    ![Screenshot](images/RevisedImages/train_the_model_9.PNG)
 
 1. Since we now know that the **Boosted Decision-Tree** model performed the best, go ahead and delete all of the modules associated with the other two models.  When finished, your workspace should look like the below:
 
