@@ -271,34 +271,47 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
 1. Drag a **Partition And Sample** module beneath **Execute R Script** and connect them.
 
-    ![Screenshot](images/train_the_model_0.png)
+    ![Screenshot](images/RevisedImages/train_the_model_0.png)
 
-1. On the **Properties** panel for the **Partition And Sample** module, set the partitioned method to **partition with custom proportions** and enter 0.7,0.15,0.15 in the **list of proportions seperated by commas** field
+1. On the **Properties** panel for the **Partition And Sample** module, set the partitioned method to **partition with custom proportions** and enter 0.3,0.15,0.15 in the **list of proportions seperated by commas** field
 
-    ![Screenshot](images/train_the_model_1.png)
+    ![Screenshot](images/RevisedImages/train_the_model_1.png)
 
-1. Then drag 3 more **Partition And Sample** modules beneath the existing **Partition and Sample** Modeule.  Connect them as shown in the screen shot.  On the properties of each new **Partition and Sample** select "Pick Fold" for the partition and sample method.  Set the leftmost fold value to 1, the middle to 2 and the right most to 3 as show in the image.
+1. Then drag 3 more **Partition And Sample** modules beneath the existing **Partition and Sample** Modeule.  Connect them as shown in the screen shot.  
 
+	![Screenshot](images/RevisedImages/train_the_model_10.png)
 
-1. Next, add 3 **Tune Model Hyperparameter** modules (one for each model) and connect the leftmost **Partition And Sample** output to the first input on each **Tune Model Hyperparameter** modul and connect the output from the middle **Partition and Sample** output to the second data input of each **Tune Model Hyperparameter** module as in the image.
+1. On the properties of each new **Partition and Sample** select "Pick Fold" for the partition and sample method.  Set the leftmost fold value to 1, the middle to 2 and the right most to 3 as show in the image.
 
-    ![Screenshot](images/train_the_model_2.png)
+	![Screenshot](images/RevisedImages/train_the_model_10.png)
+
+1. Drag a **Two-Class Logistic Regression** module, a **Two Class Decision Forest** and a **Two Class Boosted Decision Tree** module and connect each  above and connect each to the leftmost input on one of the **Tune Model Hyperparameter** modules.
+
+    ![Screenshot](images/RevisedImages/train_the_model_4.png)
+
+1. Next, add 3 **Tune Model Hyperparameter** modules (one for each model) and connect one of the model modules to the first input of each
+
+    ![Screenshot](images/RevisedImages/train_the_model_2.png)
 
 1. On the **Properties** panel for each **Tune Model Hyperparameter** module, set the Label Column to **DepDel15**. This is the column we are trying to predict.  Also make sure that the settings for each module match those in the image below (Random Sweep, 5 maximum runs, AUC as measure for performance, 
 
-    ![Screenshot](images/train_the_model_3.png)
+    ![Screenshot](images/RevisedImages/train_the_model_3.png)
 
-1. Drag a **Two-Class Logistic Regression** module, a **Two Class Decision Forest** and a **Two Class Boosted Decision Tree** modul and connect each  above and connect each to the leftmost input on one of the **Tune Model Hyperparameter** modules.
+1. Now it is time to add data to the **Tune Model Hyperparameter** modules.  Connect the output of your left-most **Partition and Sample** Module (should have fold 1) to the middle input of each **Tune Model Hyperparameter** inputs.  Then connect the middle **Partition and Sample** module (should have fold 2) to the right-most input on each of the **Tune Model Hyperparameters** module.  When complete, your configuration should look like the below image:
 
-    ![Screenshot](images/train_the_model_4.png)
+	![Screenshot](images/RevisedImages/train_the_model_12.png)
 
-1. Below the Train Model drop 3 **Score Model** module. Connect the output of one of the **Tune Model Hyperparameters* module to the leftmost input port of one of the  **Score Model** modules and connect the output of the rightmost **Partition and Sample** module to the second input on each **Score Model Hyperparameters**
+1. Below the **Tune Model Hyperparameters** modules, drop 3 **Score Model** module. Connect the output of one of the **Tune Model Hyperparameters* module to the leftmost input port of one of the  **Score Model** modules
 
-    ![Screenshot](images/train_the_model_5.png)
+    ![Screenshot](images/RevisedImages/train_the_model_5.png)
+
+1. Now connect the final, right most, **Partition and Sample** module (shoudl have fold 3) to the right most input on each of the 3 **Score Model** modules
+
+	![ScreenShot](images/RevisedImages/train_the_model_13.png)
 
 1. Run the experiment.
 
-2. When the experiment is finished running (which may take a minute or two), right click on the output port of the **Score Model** module and select **Visualize** to see the results of its predictions. You should have a total of 13 columns.
+2. When the experiment is finished running (which will take several minutes), right click on the output port of the **Score Model** module and select **Visualize** to see the results of its predictions. You should have a total of 13 columns.
 
     ![Screenshot](images/train_the_model_6.png)
 
@@ -307,9 +320,9 @@ The typical pattern is split the historical data so a portion is shown to the mo
     ![Screenshot](images/train_the_model_7.png)
 
 1. While this view enables you to see the prediction results for the first 100 rows, if you want to get more detailed statistics across the prediction results to evaluate your models performance you can use the **Evaluate Model** module.
-2. Drag an **Evaluate Model** module on to the design surface beneath the **Score Model** module. Connect the output of the **Score Model** module to the leftmost input of the **Evaluate Model** module.
+2. Drag 3 **Evaluate Model** modules on to the design surface beneath each **Score Model** module. Connect the output of each **Score Model** module to the leftmost input of one of the **Evaluate Model** module.
 
-    ![Screenshot](images/train_the_model_8.png)
+    ![Screenshot](images/RevisedImages/train_the_model_8.png)
 
 1. Run the experiment.
 2. When the experiment is finished running, right-click the output of the Evaluate Model module and select **Visualize**. In this dialog box, you are presented with various ways to understand how your model is performing in the aggregate. While we will not cover how to interpret these results in detail, we can examine the ROC chart that tells us that at least our model (the blue curve) is performing better than random (the light gray straight line going from 0,0 to 1,1). A good start for our first model!
