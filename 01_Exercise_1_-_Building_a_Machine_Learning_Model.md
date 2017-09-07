@@ -309,13 +309,13 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/RevisedImages/train_the_model_5.PNG)
 
-1. Now connect the final, right most, **Partition and Sample** module (shoudl have fold 3) to the right most input on each of the 3 **Score Model** modules
+1. Now connect the final, right most, **Partition and Sample** module (should have fold 3) to the right most input on each of the 3 **Score Model** modules
 
 	![ScreenShot](images/RevisedImages/train_the_model_13.PNG)
 
 1. Run the experiment.
 
-2. When the experiment is finished running (which will take several minutes), right click on the output port of the **Score Model** module and select **Visualize** to see the results of its predictions. You should have a total of 13 columns.
+2. When the experiment is finished running (which will take several minutes), right click on the output port of one of the **Score Model** modules and select **Visualize** to see the results of its predictions. You should have a total of 13 columns.
 
     ![Screenshot](images/train_the_model_6.png)
 
@@ -329,9 +329,14 @@ The typical pattern is split the historical data so a portion is shown to the mo
     ![Screenshot](images/RevisedImages/train_the_model_8.PNG)
 
 1. Run the experiment.
-2. When the experiment is finished running, right-click the output of the Evaluate Model module and select **Visualize**. In this dialog box, you are presented with various ways to understand how your model is performing in the aggregate. While we will not cover how to interpret these results in detail, we can examine the ROC chart that tells us that at least our model (the blue curve) is performing better than random (the light gray straight line going from 0,0 to 1,1). A good start for our first model!
+2. When the experiment is finished running, right-click the output of the Evaluate Model modules and select **Visualize**. In this dialog box, you are presented with various ways to understand how your model is performing in the aggregate. While we will not cover how to interpret these results in detail, we can examine the "Area Under the Curve" "AUC" score for each model.  The higher the score
+3. the better the model performs.  You should see tha the Two-Class Boosted Decision tree model performed the best. 
 
     ![Screenshot](images/train_the_model_9.png)
+
+1. Since we now know that the **Boosted Decision-Tree** model performed the best, go ahead and delete all of the moduls associated with the other two models.  When finished, your workspace shoudl look like the below:
+
+	![Screenshot](images/RevisedImages/train_the_model_15.PNG)
 
 ## Task 8: Operationalize the Experiment
 
