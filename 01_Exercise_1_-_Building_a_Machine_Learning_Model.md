@@ -242,15 +242,15 @@ This exercise has 8 tasks:
 
 ## Task 6: Train the Model
 
-AdventureWorks Travel wants to build a model to predict if a departing flight will have a 15 minute or greater delay. In the historical data they have provided, the indicator for such a delay is found within DepDelay15 (where a value of 1 means delay, 0 means no delay). To create model that predicts such a binary outcome, we can choose from the various Two-Class modules that Azure ML offers. For our purposes, we begin with a Two-Class Logistic Regression. This type of classification module needs to be first trained on sample data that includes the features important to making a prediction and must also include the actual historical outcome for those features.
+AdventureWorks Travel wants to build a model to predict if a departing flight will have a 15 minute or greater delay. In the historical data they have provided, the indicator for such a delay is found within DepDelay15 (where a value of 1 means delay, 0 means no delay). To create a model that predicts such a binary outcome, we can choose from the various Two-Class modules that Azure ML offers. For our purposes, we will train three seperate models (a 2-class logisitic regression model as well as two ensemble decision-tree models). Thess types of classification modules need to be first trained on sample data that includes the features important to making a prediction and must also include the actual historical outcome for those features.
 
-The typical pattern is split the historical data so a portion is shown to the model for training purposes, and another portion is reserved to test just how well the trained model performs against examples it has not seen before.  We will simultaneaously train 3 models and pick the most performant one for productionalization
+The typical pattern is to split the historical data so a portion is shown to the model for training purposes, and another portion is reserved to test just how well the trained model performs against examples it has not seen before.  We will also seperate a third section of our data that we will use to find the optimal model hyper-parameters for this predictive task.  We will simultaneaously train 3 models and pick the most performant one for operationalization.
 
 1. Drag a **Partition And Sample** module beneath **Execute R Script** and connect them.
 
     ![Screenshot](images/RevisedImages/train_the_model_0.PNG)
 
-1. On the **Properties** panel for the **Partition And Sample** module, set teh partition mode to "assign to folds" and set the partition method to **partition with custom proportions** and enter 0.3,0.15,0.15 in the **list of proportions seperated by commas** field.  Thsi will get our data ready to be split into seperate train/validation/test sets.  Normally, we would use much more of our data for trianing (70%), but for this demo we're limiting it so the models train quickly.
+1. On the **Properties** panel for the **Partition And Sample** module, set the partition mode to "assign to folds" and set the partition method to **partition with custom proportions** and enter 0.3,0.15,0.15 in the **list of proportions seperated by commas** field.  This will get our data ready to be split into seperate train/validation/test sets.  Normally, we would use much more of our data for training (70%), but for this demo we're limiting it so the models train quickly.
 
     ![Screenshot](images/RevisedImages/train_the_model_1.PNG)
 
