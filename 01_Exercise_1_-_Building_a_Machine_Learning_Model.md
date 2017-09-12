@@ -2,7 +2,7 @@
 
 Duration: 90 mins
 
-Synopsis: In this exercise, attendees will implement a classification experiment. They will load the training data from their local machine into a dataset. Then they will explore the data to identify the primary components they should use for prediction, and use two different algorithms for predicting the classification. They will evaluate the performance of both and algorithms choose the algorithm that performs best. The model selected will be exposed as a web service that is integrated with the sample web app.
+Synopsis: In this exercise, attendees will implement a classification experiment. You will load the training data from your local machine into a dataset, then explore the data to identify the primary components you should use for prediction.   You will use three different algorithms for predicting the classification and you will evaluate the performance of each to choose the algorithm that performs best. The model selected will be exposed as a web service that is integrated with the sample web app.
 
 This exercise has 8 tasks:
 
@@ -242,9 +242,9 @@ This exercise has 8 tasks:
 
 ## Task 6: Train the Model
 
-AdventureWorks Travel wants to build a model to predict if a departing flight will have a 15 minute or greater delay. In the historical data they have provided, the indicator for such a delay is found within DepDelay15 (where a value of 1 means delay, 0 means no delay). To create a model that predicts such a binary outcome, we can choose from the various Two-Class modules that Azure ML offers. For our purposes, we will train three seperate models (a 2-class logisitic regression model as well as two ensemble decision-tree models). Thess types of classification modules need to be first trained on sample data that includes the features important to making a prediction and must also include the actual historical outcome for those features.
+AdventureWorks Travel wants to build a model to predict if a departing flight will have a 15 minute or greater delay. In the historical data they have provided, the indicator for such a delay is found within DepDelay15 (where a value of 1 means delay, 0 means no delay). To create a model that predicts such a binary outcome, we can choose from the various Two-Class modules that Azure ML offers. For our purposes, we will train three seperate models (a 2-class logisitic regression model as well as two ensemble decision-tree models). These types of classification modules need to be first trained on sample data that includes the features important to making a prediction and must also include the actual historical outcome for those features.
 
-The typical pattern is to split the historical data so a portion is shown to the model for training purposes, and another portion is reserved to test just how well the trained model performs against examples it has not seen before.  We will also seperate a third section of our data that we will use to find the optimal model hyper-parameters for this predictive task.  We will simultaneaously train 3 models and pick the most performant one for operationalization.
+The typical pattern is to split the historical data so that only a portion is shown to the model for training purposes, and another portion is reserved to test how well the trained model performs against examples it has not seen before.  We will also seperate a third section of our data that we will use to find the optimal model hyper-parameters for this predictive task.  We will simultaneaously train 3 models and pick the most performant one for operationalization.
 
 1. Drag a **Partition And Sample** module beneath **Execute R Script** and connect them.
 
