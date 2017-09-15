@@ -25,8 +25,9 @@ This exercise has 8 tasks:
 ## Task 2: Upload the Sample Datasets
 
 1. Before you begin creating a machine learning experiment, there are three datasets you need to load.
-2. Download the three CSV sample datasets from here: http://aka.ms/awtdata and save AdventureWorksTravelDatasets.zip to your Desktop.
+2. Download the three CSV sample datasets from here: https://github.com/kmillard84/AzureMLHackathon/blob/master/AdventureWorksTravelDatasets.zip and save AdventureWorksTravelDatasets.zip to your Desktop by clicking download as show in the image below.
    - **Note:** You will need to unblock the zip file before extracting its files. Do this by right clicking on it, selecting **Properties**, and then unblocking the file in the resulting dialog.
+   ![Screenshot](images/Download.PNG)
 3. Extract the ZIP and verify you have the following files:
    - FlightDelaysWithAirportCodes.csv
    - FlightWeatherWithAirportCode.csv
