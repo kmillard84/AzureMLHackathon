@@ -389,7 +389,7 @@ The typical pattern is to split the historical data so that only a portion is sh
 
 ## Task 8: Deploy Web Service and Note API Information
 
-1. When the experiment is finished running, click **Deploy Web Service [New]** (*not* **[Classic]**). This will launch the web service deployment wizard.
+1. When the experiment is finished running, click **Deploy Web Service [New]** (*not* **[Classic]**). This will create your web service.
 
 1. After deployment is completed, you will be taken to the web services **Dashboard** page for your new web service.
 
