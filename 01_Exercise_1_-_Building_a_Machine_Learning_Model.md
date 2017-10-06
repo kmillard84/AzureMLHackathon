@@ -397,18 +397,15 @@ The typical pattern is to split the historical data so that only a portion is sh
 
     ![Screenshot](images/operationalize_the_experiment_19.png)
 
-1. Scroll down and click the **Deploy** button. After deployment is completed, you will be taken to the web services **Quick Start** page for your new web service.
+1. Scroll down and click the **Deploy** button. After deployment is completed, you will be taken to the web services **Dashboard** page for your new web service.
 
     ![Screenshot](images/operationalize_the_experiment_20.png)
-1. From the **Quick Start** page, click the **Use Web Service** link.
-2. Click the Copy button for the **Primary key**, open a copy of Notepad, and paste the value in the editor.
-2. Click the Copy button for the **Request-Response** link. The URL will look something like the following:
-    * https://ussouthcentral.services.azureml.net/subscriptions/[SOME_GUID]/services/[SOME_OTHER_GUID]/execute?api-version=2.0&format=swagger
-1. The first GUID after subscriptions is your Workspace ID. The second GUID after services is your Service ID.
-2. Copy each of these values into Notepad as well. Make sure you note which GUID is which because you will need these in a later step.
-1. Finally, copy the **Batch Requests** URL to Notepad as well, but make sure to remove the '?' character and everything after it. You should be left with a URL that looks something like the following. Again, make sure to label this as your batch service in your Notepad instance.
-    * https://ussouthcentral.services.azureml.net/subscriptions/[SOME_GUID]/services/[SOME_OTHER_GUID]/jobs
+1. From the **Quick Start** page, click the **Request/Response*** link.
+1. The Reqeust/Response page will now open in a new tab.  This page has all of the documentation you need to leverage your new web service in your applications.  Specifically, you will need to take note of the request URL and the input and output data schemas.  Example code is available at the bottom of the page to show you how to call the service from your application.
 
-    ![Screenshot](images/operationalize_the_experiment_21.png)
+	![Screenshot](images/revisedimages/operationalize_the_experiment_24.PNG)
 
-Next Exercise: [Exercise 2 - Setup Azure Data Factory](02_Exercise_2_-_Setup_Azure_Data_Factory.md)
+1. There is also a similar web service to use for batch scoring if you have many records that you want to score at once.  You also have the ability to download an excel notebook with the web service embedded so you can test it from right inside excel.
+
+	![Screenshot](images/revisedimages/operationalize_the_experiment_25.PNG)
+
