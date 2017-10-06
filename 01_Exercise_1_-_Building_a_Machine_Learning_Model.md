@@ -403,9 +403,11 @@ The typical pattern is to split the historical data so that only a portion is sh
 1. From the **Quick Start** page, click the **Request/Response*** link.
 1. The Reqeust/Response page will now open in a new tab.  This page has all of the documentation you need to leverage your new web service in your applications.  Specifically, you will need to take note of the request URL and the input and output data schemas.  Example code is available at the bottom of the page to show you how to call the service from your application.
 
-	![Screenshot](images/revisedimages/operationalize_the_experiment_24.PNG)
+	![Screenshot](images/RevisedImages/operationalize_the_experiment_24.PNG)
 
 1. There is also a similar web service to use for batch scoring if you have many records that you want to score at once.  You also have the ability to download an excel notebook with the web service embedded so you can test it from right inside excel.
 
-	![Screenshot](images/revisedimages/operationalize_the_experiment_25.PNG)
+	![Screenshot](images/RevisedImages/operationalize_the_experiment_25.PNG)
+
+1. That's it! Your predictive web-service is now deployed and ready to use according to the instructions provided!
 
