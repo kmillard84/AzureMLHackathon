@@ -295,7 +295,6 @@ The typical pattern is to split the historical data so that only a portion is sh
 
 2. When the experiment is finished running (which will take several minutes), right click on the output port of one of the **Score Model** modules and select **Visualize** to see the results of its predictions. You should have a total of 13 columns.
 
-    ![Screenshot](images/train_the_model_6.png)
 
 1. If you scroll to the right so that you can see the last two columns, observe there is a **Scored Labels** column and a **Scored Probabilities** column. The former is the prediction (1 for predicting delay, 0 for predicting no delay) and the latter is the probability of the prediction. In the following screenshot, for example, the last row shows a delay predication with a 53.1% probability.
 
@@ -392,12 +391,7 @@ The typical pattern is to split the historical data so that only a portion is sh
 
 1. When the experiment is finished running, click **Deploy Web Service [New]** (*not* **[Classic]**). This will launch the web service deployment wizard.
 
-1. You can leave the default name, select **Create new...** for **Price Plan** and then provide a **Plan Name** value. Finally, under **Monthly Plan Options** select **Standard DevTest**.
-    1. **NOTE:**: If you have already created a DevTest plan, you will not be able to create another one. You can simply select the DevTest plan that was already created from the **Price Plan** dropdown box.
-
-    ![Screenshot](images/operationalize_the_experiment_19.png)
-
-1. Scroll down and click the **Deploy** button. After deployment is completed, you will be taken to the web services **Dashboard** page for your new web service.
+1. After deployment is completed, you will be taken to the web services **Dashboard** page for your new web service.
 
     ![Screenshot](images/operationalize_the_experiment_20.png)
 1. From the **Quick Start** page, click the **Request/Response*** link.
